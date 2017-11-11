@@ -51,19 +51,17 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements
-        ConnectionCallbacks,
-        OnConnectionFailedListener {
-
-    // Constants
-    public static final String TAG = MainActivity.class.getSimpleName();
-    private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 111;
-    private static final int PLACE_PICKER_REQUEST = 1;
+public class MainActivity extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener {
 
     // Member variables
     private PlaceListAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private GoogleApiClient mClient;
+        
+    // Constants
+    public static final String TAG = MainActivity.class.getSimpleName();
+    private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 111;
+    private static final int PLACE_PICKER_REQUEST = 1;
 
     /**
      * Called when the activity is starting
@@ -231,7 +229,8 @@ public class MainActivity extends AppCompatActivity implements
             locationPermissions.setEnabled(false);
         }
     }
-
+        
+        
     public void onLocationPermissionClicked(View view) {
         ActivityCompat.requestPermissions(MainActivity.this,
                 new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
